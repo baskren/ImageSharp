@@ -33,6 +33,6 @@ namespace SixLabors.ImageSharp.ColorSpaces.Companding
         /// <returns>The <see cref="float"/> representing the nonlinear channel value.</returns>
         [MethodImpl(InliningOptions.ShortMethod)]
         public static float Compress(float channel)
-            => channel <= CieConstants.Epsilon ? channel * CieConstants.Kappa / 100F : MathF.Pow(1.16F * channel, 0.3333333F) - 0.16F;
+            => channel <= CieConstants.Epsilon ? channel * CieConstants.Kappa / 100F : (float)Math.Pow(1.16F * channel, 0.3333333F) - 0.16F;
     }
 }

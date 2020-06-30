@@ -25,7 +25,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
         {
             const float Epsilon = 0.0000001F;
             var v4 = Vector4.Transform(new Vector4(x, y, 0, 1F), matrix);
-            return new Vector2(v4.X, v4.Y) / MathF.Max(v4.W, Epsilon);
+            return new Vector2(v4.X, v4.Y) / Math.Max(v4.W, Epsilon);
         }
 
         /// <summary>
@@ -346,10 +346,10 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
         private static Rectangle GetBoundingRectangle(Vector2 tl, Vector2 tr, Vector2 bl, Vector2 br)
         {
             // Find the minimum and maximum "corners" based on the given vectors
-            float left = MathF.Min(tl.X, MathF.Min(tr.X, MathF.Min(bl.X, br.X)));
-            float top = MathF.Min(tl.Y, MathF.Min(tr.Y, MathF.Min(bl.Y, br.Y)));
-            float right = MathF.Max(tl.X, MathF.Max(tr.X, MathF.Max(bl.X, br.X)));
-            float bottom = MathF.Max(tl.Y, MathF.Max(tr.Y, MathF.Max(bl.Y, br.Y)));
+            float left = Math.Min(tl.X, Math.Min(tr.X, Math.Min(bl.X, br.X)));
+            float top = Math.Min(tl.Y, Math.Min(tr.Y, Math.Min(bl.Y, br.Y)));
+            float right = Math.Max(tl.X, Math.Max(tr.X, Math.Max(bl.X, br.X)));
+            float bottom = Math.Max(tl.Y, Math.Max(tr.Y, Math.Max(bl.Y, br.Y)));
 
             return Rectangle.Round(RectangleF.FromLTRB(left, top, right, bottom));
         }

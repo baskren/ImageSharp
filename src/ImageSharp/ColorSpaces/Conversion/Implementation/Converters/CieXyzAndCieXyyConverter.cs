@@ -39,7 +39,7 @@ namespace SixLabors.ImageSharp.ColorSpaces.Conversion.Implementation
         [MethodImpl(InliningOptions.ShortMethod)]
         public CieXyz Convert(in CieXyy input)
         {
-            if (MathF.Abs(input.Y) < Constants.Epsilon)
+            if (Math.Abs(input.Y) < Constants.Epsilon)
             {
                 return new CieXyz(0, 0, input.Yl);
             }

@@ -953,7 +953,7 @@ namespace SixLabors.ImageSharp.Formats.Png
 
             for (int i = 0; i < source.Length; i++)
             {
-                int value = ((int)MathF.Round(Unsafe.Add(ref sourceRef, i) / scale)) & mask;
+                int value = ((int)Math.Round(Unsafe.Add(ref sourceRef, i) / scale)) & mask;
                 v |= value << shift;
 
                 if (shift == 0)

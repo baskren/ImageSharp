@@ -65,7 +65,7 @@ namespace SixLabors.ImageSharp.PixelFormats
         public void FromVector4(Vector4 vector)
         {
             vector = Vector4.Clamp(vector, Vector4.Zero, Vector4.One) * Max * Average;
-            this.PackedValue = (ushort)MathF.Round(vector.X + vector.Y + vector.Z);
+            this.PackedValue = (ushort)Math.Round(vector.X + vector.Y + vector.Z);
         }
 
         /// <inheritdoc />
@@ -172,9 +172,9 @@ namespace SixLabors.ImageSharp.PixelFormats
         {
             vector = Vector4.Clamp(vector, Vector4.Zero, Vector4.One) * Max;
             this.PackedValue = ImageMaths.Get16BitBT709Luminance(
-                (ushort)MathF.Round(vector.X),
-                (ushort)MathF.Round(vector.Y),
-                (ushort)MathF.Round(vector.Z));
+                (ushort)Math.Round(vector.X),
+                (ushort)Math.Round(vector.Y),
+                (ushort)Math.Round(vector.Z));
         }
     }
 }

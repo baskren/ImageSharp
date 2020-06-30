@@ -88,8 +88,8 @@ namespace SixLabors.ImageSharp.Processing
                 this.source = image;
                 this.xLength = image.Width;
                 this.yLength = image.Height;
-                this.offsetY = (int)MathF.Max(MathF.Floor(region.Top), 0);
-                this.offsetX = (int)MathF.Max(MathF.Floor(region.Left), 0);
+                this.offsetY = (int)Math.Max(Math.Floor(region.Top), 0);
+                this.offsetX = (int)Math.Max(Math.Floor(region.Left), 0);
             }
 
             /// <summary>

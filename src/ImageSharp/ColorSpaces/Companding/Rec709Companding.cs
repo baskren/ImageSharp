@@ -21,7 +21,7 @@ namespace SixLabors.ImageSharp.ColorSpaces.Companding
         /// <returns>The <see cref="float"/> representing the linear channel value.</returns>
         [MethodImpl(InliningOptions.ShortMethod)]
         public static float Expand(float channel)
-            => channel < 0.081F ? channel / 4.5F : MathF.Pow((channel + 0.099F) / 1.099F, 2.222222F);
+            => channel < 0.081F ? channel / 4.5F : (float)Math.Pow((channel + 0.099F) / 1.099F, 2.222222F);
 
         /// <summary>
         /// Compresses an uncompanded channel (linear) to its nonlinear equivalent.

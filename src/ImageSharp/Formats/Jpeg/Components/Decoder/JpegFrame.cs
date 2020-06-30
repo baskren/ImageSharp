@@ -95,8 +95,8 @@ namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder
         /// </summary>
         public void InitComponents()
         {
-            this.McusPerLine = (int)MathF.Ceiling(this.SamplesPerLine / 8F / this.MaxHorizontalFactor);
-            this.McusPerColumn = (int)MathF.Ceiling(this.Scanlines / 8F / this.MaxVerticalFactor);
+            this.McusPerLine = (int)Math.Ceiling(this.SamplesPerLine / 8F / this.MaxHorizontalFactor);
+            this.McusPerColumn = (int)Math.Ceiling(this.Scanlines / 8F / this.MaxVerticalFactor);
 
             for (int i = 0; i < this.ComponentCount; i++)
             {

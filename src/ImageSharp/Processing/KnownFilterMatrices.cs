@@ -335,8 +335,8 @@ namespace SixLabors.ImageSharp.Processing
             }
 
             float radian = GeometryUtilities.DegreeToRadian(degrees);
-            float cosRadian = MathF.Cos(radian);
-            float sinRadian = MathF.Sin(radian);
+            float cosRadian = (float)Math.Cos(radian);
+            float sinRadian = (float)Math.Sin(radian);
 
             // The matrix is set up to preserve the luminance of the image.
             // See http://graficaobscura.com/matrix/index.html

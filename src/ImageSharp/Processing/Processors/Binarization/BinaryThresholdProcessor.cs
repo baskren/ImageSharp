@@ -61,7 +61,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Binarization
             Rectangle sourceRectangle,
             Configuration configuration)
         {
-            byte threshold = (byte)MathF.Round(this.Threshold * 255F);
+            byte threshold = (byte)Math.Round(this.Threshold * 255F);
             TPixel upper = this.UpperColor;
             TPixel lower = this.LowerColor;
 

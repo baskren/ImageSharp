@@ -36,8 +36,8 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
             float xRadius = this.GetSamplingRadius(source.Width, destination.Width);
 
             this.extents = new Vector2(xRadius, yRadius);
-            int xLength = (int)MathF.Ceiling((this.extents.X * 2) + 2);
-            int yLength = (int)MathF.Ceiling((this.extents.Y * 2) + 2);
+            int xLength = (int)Math.Ceiling((this.extents.X * 2) + 2);
+            int yLength = (int)Math.Ceiling((this.extents.Y * 2) + 2);
 
             // We use 2D buffers so that we can access the weight spans per row in parallel.
             this.yBuffer = configuration.MemoryAllocator.Allocate2D<float>(yLength, destination.Height);
@@ -79,10 +79,10 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
 
             // left, top, right, bottom
             var extents = new Vector4(
-                MathF.Ceiling(minXY.X - .5F),
-                MathF.Ceiling(minXY.Y - .5F),
-                MathF.Floor(maxXY.X + .5F),
-                MathF.Floor(maxXY.Y + .5F));
+                (float)Math.Ceiling(minXY.X - .5F),
+                (float)Math.Ceiling(minXY.Y - .5F),
+                (float)Math.Floor(maxXY.X + .5F),
+                (float)Math.Floor(maxXY.Y + .5F));
 
             extents = Vector4.Clamp(extents, Vector4.Zero, this.maxSourceExtents);
 
@@ -149,7 +149,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
                 scale = 1F;
             }
 
-            return MathF.Ceiling(scale * this.sampler.Radius);
+            return (float)Math.Ceiling(scale * this.sampler.Radius);
         }
 
         public void Dispose()

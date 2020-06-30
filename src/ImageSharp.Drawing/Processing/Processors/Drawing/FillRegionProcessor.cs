@@ -134,8 +134,8 @@ namespace SixLabors.ImageSharp.Processing.Processors.Drawing
                                 // points will be paired up
                                 float scanStart = buffer[point] - minX;
                                 float scanEnd = buffer[point + 1] - minX;
-                                int startX = (int)MathF.Floor(scanStart + offset);
-                                int endX = (int)MathF.Floor(scanEnd + offset);
+                                int startX = (int)Math.Floor(scanStart + offset);
+                                int endX = (int)Math.Floor(scanEnd + offset);
 
                                 if (startX >= 0 && startX < scanline.Length)
                                 {

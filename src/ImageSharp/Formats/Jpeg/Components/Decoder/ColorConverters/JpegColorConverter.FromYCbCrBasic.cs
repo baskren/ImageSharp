@@ -37,9 +37,9 @@ namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
                     float cb = cbVals[i] - halfValue;
                     float cr = crVals[i] - halfValue;
 
-                    v.X = MathF.Round(y + (1.402F * cr), MidpointRounding.AwayFromZero);
-                    v.Y = MathF.Round(y - (0.344136F * cb) - (0.714136F * cr), MidpointRounding.AwayFromZero);
-                    v.Z = MathF.Round(y + (1.772F * cb), MidpointRounding.AwayFromZero);
+                    v.X = (float)Math.Round(y + (1.402F * cr), MidpointRounding.AwayFromZero);
+                    v.Y = (float)Math.Round(y - (0.344136F * cb) - (0.714136F * cr), MidpointRounding.AwayFromZero);
+                    v.Z = (float)Math.Round(y + (1.772F * cb), MidpointRounding.AwayFromZero);
 
                     v *= scale;
 

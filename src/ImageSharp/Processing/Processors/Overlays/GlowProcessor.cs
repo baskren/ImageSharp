@@ -95,7 +95,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Overlays
 
             float finalRadius = this.Radius.Calculate(source.Size());
 
-            float maxDistance = finalRadius > 0 ? MathF.Min(finalRadius, sourceRectangle.Width * .5F) : sourceRectangle.Width * .5F;
+            float maxDistance = finalRadius > 0 ? Math.Min(finalRadius, sourceRectangle.Width * .5F) : sourceRectangle.Width * .5F;
 
             // Align start/end positions.
             int minX = Math.Max(0, startX);

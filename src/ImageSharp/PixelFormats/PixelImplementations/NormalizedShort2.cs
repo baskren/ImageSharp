@@ -176,8 +176,8 @@ namespace SixLabors.ImageSharp.PixelFormats
             vector = Vector2.Clamp(vector, Min, Max);
 
             // Round rather than truncate.
-            uint word2 = (uint)((int)MathF.Round(vector.X) & 0xFFFF);
-            uint word1 = (uint)(((int)MathF.Round(vector.Y) & 0xFFFF) << 0x10);
+            uint word2 = (uint)((int)Math.Round(vector.X) & 0xFFFF);
+            uint word1 = (uint)(((int)Math.Round(vector.Y) & 0xFFFF) << 0x10);
 
             return word2 | word1;
         }

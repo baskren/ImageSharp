@@ -90,8 +90,8 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
                                 for (int x = 0; x < width; x++)
                                 {
                                     Vector2 point = TransformUtils.ProjectiveTransform2D(x, y, matrix);
-                                    int px = (int)MathF.Round(point.X);
-                                    int py = (int)MathF.Round(point.Y);
+                                    int px = (int)Math.Round(point.X);
+                                    int py = (int)Math.Round(point.Y);
 
                                     if (sourceRectangle.Contains(px, py))
                                     {

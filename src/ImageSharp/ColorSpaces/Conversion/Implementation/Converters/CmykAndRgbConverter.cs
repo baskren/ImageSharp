@@ -36,9 +36,9 @@ namespace SixLabors.ImageSharp.ColorSpaces.Conversion.Implementation
             Vector3 cmy = Vector3.One - input.ToVector3();
 
             // To CMYK
-            var k = new Vector3(MathF.Min(cmy.X, MathF.Min(cmy.Y, cmy.Z)));
+            var k = new Vector3(Math.Min(cmy.X, Math.Min(cmy.Y, cmy.Z)));
 
-            if (MathF.Abs(k.X - 1F) < Constants.Epsilon)
+            if (Math.Abs(k.X - 1F) < Constants.Epsilon)
             {
                 return new Cmyk(0, 0, 0, 1F);
             }

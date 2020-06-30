@@ -27,7 +27,7 @@ namespace SixLabors.ImageSharp.ColorSpaces.Conversion.Implementation
             float kb = ComputeKb(input.WhitePoint);
 
             float pow = ImageMaths.Pow2(l / 100F);
-            float sqrtPow = MathF.Sqrt(pow);
+            float sqrtPow = (float)Math.Sqrt(pow);
             float y = pow * yn;
 
             float x = (((a / ka) * sqrtPow) + pow) * xn;

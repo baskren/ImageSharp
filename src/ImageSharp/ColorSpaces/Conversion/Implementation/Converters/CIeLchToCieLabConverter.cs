@@ -24,8 +24,8 @@ namespace SixLabors.ImageSharp.ColorSpaces.Conversion.Implementation
             float l = input.L, c = input.C, hDegrees = input.H;
             float hRadians = GeometryUtilities.DegreeToRadian(hDegrees);
 
-            float a = c * MathF.Cos(hRadians);
-            float b = c * MathF.Sin(hRadians);
+            float a = (float)(c * Math.Cos(hRadians));
+            float b = (float)(c * Math.Sin(hRadians));
 
             return new CieLab(l, a, b, input.WhitePoint);
         }

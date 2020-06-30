@@ -23,11 +23,11 @@ namespace SixLabors.ImageSharp.Primitives
         public ShapeRegion(IPath shape)
         {
             this.Shape = shape.AsClosedPath();
-            int left = (int)MathF.Floor(shape.Bounds.Left);
-            int top = (int)MathF.Floor(shape.Bounds.Top);
+            int left = (int)Math.Floor(shape.Bounds.Left);
+            int top = (int)Math.Floor(shape.Bounds.Top);
 
-            int right = (int)MathF.Ceiling(shape.Bounds.Right);
-            int bottom = (int)MathF.Ceiling(shape.Bounds.Bottom);
+            int right = (int)Math.Ceiling(shape.Bounds.Right);
+            int bottom = (int)Math.Ceiling(shape.Bounds.Bottom);
             this.Bounds = Rectangle.FromLTRB(left, top, right, bottom);
         }
 

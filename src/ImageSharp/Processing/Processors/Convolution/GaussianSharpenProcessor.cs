@@ -27,7 +27,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Convolution
         /// The 'sigma' value representing the weight of the sharpening.
         /// </param>
         public GaussianSharpenProcessor(float sigma = 3F)
-            : this(sigma, (int)MathF.Ceiling(sigma * 3))
+            : this(sigma, (int)Math.Ceiling(sigma * 3))
         {
             // Kernel radius is calculated using the minimum viable value.
             // http://chemaguerra.com/gaussian-filter-radius/

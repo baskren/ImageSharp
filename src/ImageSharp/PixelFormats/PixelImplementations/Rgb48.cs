@@ -86,9 +86,9 @@ namespace SixLabors.ImageSharp.PixelFormats
         public void FromVector4(Vector4 vector)
         {
             vector = Vector4.Clamp(vector, Vector4.Zero, Vector4.One) * Max;
-            this.R = (ushort)MathF.Round(vector.X);
-            this.G = (ushort)MathF.Round(vector.Y);
-            this.B = (ushort)MathF.Round(vector.Z);
+            this.R = (ushort)Math.Round(vector.X);
+            this.G = (ushort)Math.Round(vector.Y);
+            this.B = (ushort)Math.Round(vector.Z);
         }
 
         /// <inheritdoc />

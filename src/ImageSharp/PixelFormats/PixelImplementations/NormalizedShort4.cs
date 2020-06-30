@@ -168,10 +168,10 @@ namespace SixLabors.ImageSharp.PixelFormats
             vector = Vector4.Clamp(vector, Min, Max);
 
             // Round rather than truncate.
-            ulong word4 = ((ulong)MathF.Round(vector.X) & 0xFFFF) << 0x00;
-            ulong word3 = ((ulong)MathF.Round(vector.Y) & 0xFFFF) << 0x10;
-            ulong word2 = ((ulong)MathF.Round(vector.Z) & 0xFFFF) << 0x20;
-            ulong word1 = ((ulong)MathF.Round(vector.W) & 0xFFFF) << 0x30;
+            ulong word4 = ((ulong)Math.Round(vector.X) & 0xFFFF) << 0x00;
+            ulong word3 = ((ulong)Math.Round(vector.Y) & 0xFFFF) << 0x10;
+            ulong word2 = ((ulong)Math.Round(vector.Z) & 0xFFFF) << 0x20;
+            ulong word1 = ((ulong)Math.Round(vector.W) & 0xFFFF) << 0x30;
 
             return word4 | word3 | word2 | word1;
         }

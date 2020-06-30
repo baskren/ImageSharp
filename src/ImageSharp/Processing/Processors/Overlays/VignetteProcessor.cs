@@ -94,9 +94,9 @@ namespace SixLabors.ImageSharp.Processing.Processors.Overlays
             Size sourceSize = source.Size();
             float finalRadiusX = this.RadiusX.Calculate(sourceSize);
             float finalRadiusY = this.RadiusY.Calculate(sourceSize);
-            float rX = finalRadiusX > 0 ? MathF.Min(finalRadiusX, sourceRectangle.Width * .5F) : sourceRectangle.Width * .5F;
-            float rY = finalRadiusY > 0 ? MathF.Min(finalRadiusY, sourceRectangle.Height * .5F) : sourceRectangle.Height * .5F;
-            float maxDistance = MathF.Sqrt((rX * rX) + (rY * rY));
+            float rX = finalRadiusX > 0 ? Math.Min(finalRadiusX, sourceRectangle.Width * .5F) : sourceRectangle.Width * .5F;
+            float rY = finalRadiusY > 0 ? Math.Min(finalRadiusY, sourceRectangle.Height * .5F) : sourceRectangle.Height * .5F;
+            float maxDistance = (float)Math.Sqrt((rX * rX) + (rY * rY));
 
             // Align start/end positions.
             int minX = Math.Max(0, startX);

@@ -198,7 +198,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Text
 
                 if (this.renderOutline)
                 {
-                    this.offset = (int)MathF.Ceiling((pen.StrokeWidth * 2) + 2);
+                    this.offset = (int)Math.Ceiling((pen.StrokeWidth * 2) + 2);
                     this.OutlineOperations = new List<DrawingOperation>(size);
                 }
 
@@ -225,8 +225,8 @@ namespace SixLabors.ImageSharp.Processing.Processors.Text
                 this.currentRenderPosition = Point.Truncate(bounds.Location);
                 PointF subPixelOffset = bounds.Location - this.currentRenderPosition;
 
-                subPixelOffset.X = MathF.Round(subPixelOffset.X * AccuracyMultiple) / AccuracyMultiple;
-                subPixelOffset.Y = MathF.Round(subPixelOffset.Y * AccuracyMultiple) / AccuracyMultiple;
+                subPixelOffset.X = (float)Math.Round(subPixelOffset.X * AccuracyMultiple) / AccuracyMultiple;
+                subPixelOffset.Y = (float)Math.Round(subPixelOffset.Y * AccuracyMultiple) / AccuracyMultiple;
 
                 // we have offset our rendering origion a little bit down to prevent edge cropping, move the draw origin up to compensate
                 this.currentRenderPosition = new Point(this.currentRenderPosition.X - this.offset, this.currentRenderPosition.Y - this.offset);
@@ -389,8 +389,8 @@ namespace SixLabors.ImageSharp.Processing.Processors.Text
                                 // points will be paired up
                                 float scanStart = buffer[point];
                                 float scanEnd = buffer[point + 1];
-                                int startX = (int)MathF.Floor(scanStart + offset);
-                                int endX = (int)MathF.Floor(scanEnd + offset);
+                                int startX = (int)Math.Floor(scanStart + offset);
+                                int endX = (int)Math.Floor(scanEnd + offset);
 
                                 if (startX >= 0 && startX < scanline.Length)
                                 {

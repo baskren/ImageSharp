@@ -50,12 +50,12 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
             const int min = 1;
             if (targetWidth == 0 && targetHeight > 0)
             {
-                targetWidth = (int)MathF.Max(min, MathF.Round(sourceSize.Width * targetHeight / (float)sourceSize.Height));
+                targetWidth = (int)Math.Max(min, Math.Round(sourceSize.Width * targetHeight / (float)sourceSize.Height));
             }
 
             if (targetHeight == 0 && targetWidth > 0)
             {
-                targetHeight = (int)MathF.Max(min, MathF.Round(sourceSize.Height * targetWidth / (float)sourceSize.Width));
+                targetHeight = (int)Math.Max(min, Math.Round(sourceSize.Height * targetWidth / (float)sourceSize.Width));
             }
 
             Guard.MustBeGreaterThan(targetWidth, 0, nameof(targetWidth));
@@ -103,13 +103,13 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
             const int min = 1;
             if (width == 0 && height > 0)
             {
-                width = (int)MathF.Max(min, MathF.Round(sourceSize.Width * height / (float)sourceSize.Height));
+                width = (int)Math.Max(min, Math.Round(sourceSize.Width * height / (float)sourceSize.Height));
                 resizeRectangle.Width = width;
             }
 
             if (height == 0 && width > 0)
             {
-                height = (int)MathF.Max(min, MathF.Round(sourceSize.Height * width / (float)sourceSize.Width));
+                height = (int)Math.Max(min, Math.Round(sourceSize.Height * width / (float)sourceSize.Width));
                 resizeRectangle.Height = height;
             }
 

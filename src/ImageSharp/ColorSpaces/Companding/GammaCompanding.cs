@@ -22,7 +22,7 @@ namespace SixLabors.ImageSharp.ColorSpaces.Companding
         /// <param name="gamma">The gamma value.</param>
         /// <returns>The <see cref="float"/> representing the linear channel value.</returns>
         [MethodImpl(InliningOptions.ShortMethod)]
-        public static float Expand(float channel, float gamma) => MathF.Pow(channel, gamma);
+        public static float Expand(float channel, float gamma) => (float)Math.Pow(channel, gamma);
 
         /// <summary>
         /// Compresses an uncompanded channel (linear) to its nonlinear equivalent.
@@ -31,6 +31,6 @@ namespace SixLabors.ImageSharp.ColorSpaces.Companding
         /// <param name="gamma">The gamma value.</param>
         /// <returns>The <see cref="float"/> representing the nonlinear channel value.</returns>
         [MethodImpl(InliningOptions.ShortMethod)]
-        public static float Compress(float channel, float gamma) => MathF.Pow(channel, 1 / gamma);
+        public static float Compress(float channel, float gamma) => (float)Math.Pow(channel, 1 / gamma);
     }
 }

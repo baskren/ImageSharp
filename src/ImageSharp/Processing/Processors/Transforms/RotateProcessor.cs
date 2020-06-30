@@ -73,7 +73,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
                 return;
             }
 
-            if (MathF.Abs(WrapDegrees(this.Degrees)) < Constants.Epsilon)
+            if (Math.Abs(WrapDegrees(this.Degrees)) < Constants.Epsilon)
             {
                 // No need to do anything so return.
                 return;
@@ -115,26 +115,26 @@ namespace SixLabors.ImageSharp.Processing.Processors.Transforms
             // Wrap the degrees to keep within 0-360 so we can apply optimizations when possible.
             float degrees = WrapDegrees(this.Degrees);
 
-            if (MathF.Abs(degrees) < Constants.Epsilon)
+            if (Math.Abs(degrees) < Constants.Epsilon)
             {
                 // The destination will be blank here so copy all the pixel data over
                 source.GetPixelSpan().CopyTo(destination.GetPixelSpan());
                 return true;
             }
 
-            if (MathF.Abs(degrees - 90) < Constants.Epsilon)
+            if (Math.Abs(degrees - 90) < Constants.Epsilon)
             {
                 this.Rotate90(source, destination, configuration);
                 return true;
             }
 
-            if (MathF.Abs(degrees - 180) < Constants.Epsilon)
+            if (Math.Abs(degrees - 180) < Constants.Epsilon)
             {
                 this.Rotate180(source, destination, configuration);
                 return true;
             }
 
-            if (MathF.Abs(degrees - 270) < Constants.Epsilon)
+            if (Math.Abs(degrees - 270) < Constants.Epsilon)
             {
                 this.Rotate270(source, destination, configuration);
                 return true;

@@ -163,7 +163,7 @@ namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
             Vector4 color = (dst * dstW) + (src * srcW) + (blend * blendW);
 
             // unpremultiply
-            color /= MathF.Max(alpha, Constants.Epsilon);
+            color /= Math.Max(alpha, Constants.Epsilon);
             color.W = alpha;
 
             return color;
@@ -183,7 +183,7 @@ namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
             Vector4 color = (dst * dstW) + (blend * blendW);
 
             // unpremultiply
-            color /= MathF.Max(alpha, Constants.Epsilon);
+            color /= Math.Max(alpha, Constants.Epsilon);
             color.W = alpha;
 
             return color;
@@ -195,7 +195,7 @@ namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
             float alpha = dst.W * src.W;
 
             Vector4 color = src * alpha;                    // premultiply
-            color /= MathF.Max(alpha, Constants.Epsilon);   // unpremultiply
+            color /= Math.Max(alpha, Constants.Epsilon);   // unpremultiply
             color.W = alpha;
 
             return color;
@@ -207,7 +207,7 @@ namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
             float alpha = (1 - dst.W) * src.W;
 
             Vector4 color = src * alpha;                    // premultiply
-            color /= MathF.Max(alpha, Constants.Epsilon);   // unpremultiply
+            color /= Math.Max(alpha, Constants.Epsilon);   // unpremultiply
             color.W = alpha;
 
             return color;
@@ -223,7 +223,7 @@ namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
             Vector4 color = (src.W * src * srcW) + (dst.W * dst * dstW);
 
             // unpremultiply
-            color /= MathF.Max(alpha, Constants.Epsilon);
+            color /= Math.Max(alpha, Constants.Epsilon);
             color.W = alpha;
 
             return color;
